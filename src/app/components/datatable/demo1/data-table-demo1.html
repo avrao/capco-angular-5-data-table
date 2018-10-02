@@ -1,0 +1,147 @@
+<div id="capco-grid">
+    <data-table
+        [title]="'Capco Data Table'"
+        [items]="items"
+        [itemCount]="itemCount"
+        [pageLimits]="limits"
+        (reload)="reloadItems($event)"
+        (rowClick)="rowClick($event)"
+        (rowDoubleClick)="rowDoubleClick($event)">
+        <data-table-column
+            [property]="'name'"
+            [header]="'Name'"
+            width="100px">
+        </data-table-column>
+        <data-table-column
+            [property]="'phone'"
+            [header]="'Phone'"
+            width="100px">
+        </data-table-column>
+        <data-table-column
+            [property]="'email'"
+            [header]="'Email'"
+            width="150px">
+        </data-table-column>
+        <data-table-column
+            [property]="'company'"
+            [header]="'Company'"
+            width="150px">
+        </data-table-column>
+        <data-table-column
+            [property]="'date_entry'"
+            [header]="'Date Entry'"
+            width="150px">
+        </data-table-column>
+
+        <data-table-column
+            [property]="'org_num'"
+            [header]="'Org Num'"
+            width="100px"
+            [resizable]="false">
+        </data-table-column>
+        <data-table-column
+            [property]="'address_1'"
+            [header]="'Address'"
+            [width]="150"
+            [resizable]="false">
+        </data-table-column>
+        <data-table-column
+            [property]="'city'"
+            [header]="'City'"
+            [width]="100"
+            [resizable]="false">
+        </data-table-column>
+        <data-table-column
+            [property]="'zip'"
+            [header]="'Zip'"
+            [width]="100"
+            [resizable]="false">
+        </data-table-column>
+        <data-table-column
+            [property]="'geo'"
+            [header]="'Geo'"
+            width="100px">
+        </data-table-column>
+        <data-table-column
+            [property]="'pan'"
+            [header]="'Pan'"
+            [width]="100">
+        </data-table-column>
+        <data-table-column
+            [property]="'pin'"
+            [header]="'Pin'"
+            [width]="100">
+        </data-table-column>
+        <data-table-column
+            [property]="'id'"
+            [header]="'Id'"
+            [width]="100">
+        </data-table-column>
+        <data-table-column
+            [property]="'status'"
+            [header]="'Status'"
+            [width]="100">
+        </data-table-column>
+        <data-table-column
+            [property]="'fee'"
+            [header]="'Fee'"
+            [width]="100">
+        </data-table-column>
+        <data-table-column
+            [property]="'guid'"
+            [header]="'GuId'"
+            [width]="100">
+        </data-table-column>
+        <data-table-column
+            [property]="'date_exit'"
+            [header]="'Date Exit'"
+            width="150px">
+        </data-table-column>
+        <data-table-column
+            [property]="'date_first'"
+            [header]="'Date First'"
+            width="150px">
+        </data-table-column>
+        <data-table-column
+            [property]="'date_recent'"
+            [header]="'Date Recent'"
+            width="150px">
+        </data-table-column>
+        <data-table-column
+            [property]="'url'"
+            [header]="'Url'"
+            width="100px">
+        </data-table-column>
+    </data-table>
+ </div>
+<br>
+<br>
+<div class="notes">
+<p class="h6">Notes for testers and developers</p>
+<ul>
+    <li>
+        The table demo defines a row-click event. This is executed when the user clicks on the row. However, this functionality shows an alert that the 'Id' and 'Status' are being posted. But the backend is not wired to post data.
+    </li>
+    <li>
+        The table demo defines a row-double click event. This is executed when the user double-clicks on the row. However, this functionality shows an alert that the 'Id' and 'Status' are being posted.
+        But the backend is not wired to post data.
+    </li>
+    <li>
+        Horizontal scroll will be applied for a table width exceeding 1100px and vertical scroll will trigger for a height that exceeds 750px.
+    </li>
+    <li>
+        Pagination view is also set to 1100px and is not visible through out the scroll-width.
+    </li>
+    <li>
+        Replacing data with exact keys will not break the application.
+    </li>
+</ul>
+</div>
+<script>
+  $('data-table').on('scroll', function () {
+    $("data-table > *").width($("data-table").width() + $("data-table").scrollLeft());
+    $("data-table > *").width($("data-table").width() + $("data-table").scrollright());
+    $("data-table > *").height($("data-table").height() + $("data-table").scrollbottom());
+    $("data-table > *").height($("data-table").height() + $("data-table").scrolltop());
+});
+</script>

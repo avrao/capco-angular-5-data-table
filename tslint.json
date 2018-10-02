@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "tslint-angular"
+  ],
+  "indent": [
+    true,
+    "spaces",
+    4
+]
+}

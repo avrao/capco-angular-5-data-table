@@ -1,0 +1,18 @@
+:host /deep/ .data-table-row {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+data-table {
+    border-collapse: none;
+    width: 1200px;
+    height: 750px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    display: block;
+}
+.notes{
+ width: 1200px;
+}
